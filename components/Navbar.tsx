@@ -9,23 +9,27 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative flexBetween max-container padding-container py-5 z-30">
+    <nav className="  relative flexBetween max-container py-5 z-30">
       <Link href="/">
         <Image src="/hilink-logo.svg" alt="HiLink" width={74} height={29} />
       </Link>
 
       <ul
         className={`
-    absolute text-white lg:text-gray-50 text-center h-fit py-[20px] rounded-lg px-16 w-[70%] top-[100%] mx-auto left-[50%] translate-x-[-50%] max-lg:bg-gradient-to-r from-green-50 to-blue-70 
-    lg:relative lg:flex lg:h-full lg:gap-12 lg:transition-all
-        ${isOpen ? "max-lg:opacity-1 block" : "max-lg:opacity-0 hidden"}
+    absolute text-white flex-1  lg:text-gray-50 text-center h-fit  w-[70%]  py-[20px] rounded-lg px-16  top-[100%] mx-auto left-[50%] translate-x-[-50%] max-lg:bg-gradient-to-r from-green-50 to-blue-70 
+    lg:relative lg:flex lg:h-full lg:gap-12  transition-all duration-200  
+        ${
+          isOpen
+            ? "max-lg:opacity-1 max-lg:translate-y-0"
+            : "max-lg:opacity-0 max-lg:translate-y-[-100%]"
+        }
 `}
       >
         {NAV_LINKS.map((link) => (
           <Link
             href={link.href}
             key={link.key}
-            className=" regular-16 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+            className=" regular-16 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold hover:tracking-[1px] "
           >
             {link.label}
           </Link>
