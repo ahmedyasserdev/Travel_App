@@ -1,10 +1,19 @@
+"use client";
 import Image from "next/image";
 import Button from "./Button";
+import { useState } from "react";
 const Hero = () => {
+  const [isHidden, setIsHidden] = useState(false);
+  const hide = () => {
+    setIsHidden(true);
+    setTimeout(() => {
+      setIsHidden(false);
+    }, 5000);
+  };
   return (
     <section className="max-container    gap-20 md:gap-28 flex-col flex   py-10 pb-32  lg:py-20 lg:flex-row ">
       <div className="hero-map" />
-      <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
+      <div className="relative z-20 flex flex-1 flex-col lg:w-1/2">
         <Image
           src="/camp.svg"
           alt="camp"
@@ -53,15 +62,24 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="relative flex flex-1 items-start ">
+      <div
+        className={`relative ${
+          isHidden ? "opacity-0" : "opacity-1"
+        }   flex  flex-1  items-start transition-opacity duration-200 `}
+      >
         <div className="relative z-20 w-[268px]  flex-col  rounded-3xl gap-8 bg-green-90 px-7 py-8 ">
-          <div className="flex-col">
-            <div className="flexBetween">
-              <p className="regular-16 text-gray-20">Location</p>
-              <Image src="/close.svg" width={24} height={24} alt="close" />
-            </div>
-            <p className="bold-20 text-white">Aguas Calientas</p>
+          <div className="flexBetween">
+            <p className="regular-16 text-gray-20 ">Location</p>
+            <Image
+              src="/close.svg"
+              width={24}
+              height={24}
+              alt="close"
+              onClick={() => hide()}
+              className="cursor-pointer hover:rotate-[180deg] transition-transform duration-200 "
+            />
           </div>
+          <p className="bold-20 text-white">Aguas Calientas</p>
 
           <div className="flexBetween">
             <div className="flex flex-col">

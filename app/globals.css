@@ -155,3 +155,16 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #30af5b !important ;
+}
+
+.swiper-slide:hover {
+  cursor: grab;
+}
+
+.swiper-slide:active {
+  cursor: grabbing;
+}
