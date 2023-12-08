@@ -33,8 +33,8 @@ const Camp = () => {
         </SwiperSlide>
       </Swiper>
 
-      <div className="flexEnd mt-10 p-6  lg:-mt-60 lg:mr-[12px] lg:group-hover:mt-4   transition-all duration-150  ">
-        <div className="bg-green-50  text-white   p-8 lg:max-w-[400px] xl:max-w-[734px] lg:rounded-5xl xl:px-16 xl:py-18 relative  z-10  rounded-3xl  w-full overflow-hidden ">
+      <div className="flexEnd mt-10 p-6  lg:-mt-60 lg:mr-6 2xl:mr-4  lg:group-hover:mt-4   transition-all duration-150  ">
+        <div className="bg-green-50  text-white   p-8 lg:max-w-[400px] xl:max-w-[734px] lg:rounded-5xl xxl:px-16 xl:py-18 relative  z-10  rounded-3xl  w-full overflow-hidden ">
           <h2 className="capitalize  regular-24 md:regular-32  2xl:regular-64 ">
             {" "}
             <strong>Feeling Lost</strong> and not knowing the way

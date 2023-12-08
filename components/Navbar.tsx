@@ -29,6 +29,7 @@ const Navbar = () => {
           <Link
             href={link.href}
             key={link.key}
+            onClick={() => setIsOpen(false)}
             className=" regular-16 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold hover:tracking-[1px] "
           >
             {link.label}
